@@ -16,8 +16,12 @@ pnpm-debug.log*
 # Editor directories and files
 .idea
 .vscode
+*.code-workspace
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+
+#Electron-builder output
+/dist_electron
