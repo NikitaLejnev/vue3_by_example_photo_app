@@ -46,3 +46,29 @@
     </form>
   </div>
 </template>
+
+<script>
+import axios from "axios";
+import { APIURL } from "../constant";
+
+export default {
+  name: "PhotoForm",
+  data() {
+    return {
+      form: {
+        name: "",
+        description: "",
+        dateTaken: "",
+        photoFile: undefined,
+      },
+    };
+  },
+  async beforeMount() {
+    const { id } = this.$route.params;
+    if (id) {
+      const { data } = await axios.get(`${APIURL}/photos/${id}`);
+      this.form = data;
+    }
+  },
+};
+</script>
