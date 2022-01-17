@@ -25,6 +25,9 @@
        const { data } = await axios.get(`${APIURL}/photos`);
        this.photos = data;
      },
+     edit(id) {
+       this.$router.push({ path: `/edit-photo-form/${id}` });
+     },
    },
    beforeMount() {
      this.load();
