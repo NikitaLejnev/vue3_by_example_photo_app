@@ -28,6 +28,11 @@
      edit(id) {
        this.$router.push({ path: `/edit-photo-form/${id}` });
      },
+     async deletePhoto(id) {
+       await axios.delete(`${APIURL}/photos/${id}`);
+       this.photos = [];
+       this.load();
+     },
    },
    beforeMount() {
      this.load();
