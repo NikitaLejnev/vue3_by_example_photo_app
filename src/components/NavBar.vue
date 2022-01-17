@@ -13,3 +13,14 @@
     </ul>
   </nav>
 </template>
+
+<script>
+export default {
+  methods: {
+    logOut() {
+      localStorage.clear();
+      this.$router.push("/login");
+    },
+  },
+};
+</script>
