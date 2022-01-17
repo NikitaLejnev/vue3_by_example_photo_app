@@ -63,6 +63,29 @@ export default {
       },
     };
   },
+  methods: {
+    async submit() {
+      const { name, description, dateTaken, photoFile } = this.form;
+      if (!name || !description || !dateTaken || !photoFile) {
+        alert("All fields are required!");
+        return;
+      }
+      if (this.edit) {
+        await axios.put(`${APIURL}/photos/${this.id}`,
+          this.form);
+      } else {
+        await axios.post(`${APIURL}/photos`, this.form);
+      }
+      this.$router.push('/');
+    },
+    onChange(ev) {
+      const reader = new FileReader();
+      reader.readAsDataURL(ev.target.files[0]);
+      reader.onload = () => {
+        this.form.photoFile = reader.result;
+      };
+    },
+  },
   async beforeMount() {
     const { id } = this.$route.params;
     if (id) {
