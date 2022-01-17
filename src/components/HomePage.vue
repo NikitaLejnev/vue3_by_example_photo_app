@@ -20,8 +20,16 @@
        photos: [],
      };
    },
-   methods: {}
- }
+   methods: {
+     async load() {
+       const { data } = await axios.get(`${APIURL}/photos`);
+       this.photos = data;
+     },
+   },
+   beforeMount() {
+     this.load();
+   },
+ };
  </script>
  
  <style scoped>
