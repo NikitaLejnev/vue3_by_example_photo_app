@@ -24,3 +24,16 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+ul li {
+  list-style: none;
+  display: inline;
+  margin-right: 10px;
+}
+
+ul {
+  margin: 0 auto;
+  width: 70vw;
+}
+</style>
