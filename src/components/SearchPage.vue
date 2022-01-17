@@ -39,6 +39,18 @@ export default {
       photos: [],
     };
   },
+  methods: {
+    async search() {
+      const { data } = await axios.get(
+        `${APIURL}/photos?name_like=${this.$route.query.q}`
+      );
+      this.photos = data;
+    },
+    submit() {
+      console.log(this.keyword);
+      this.$router.push({ path: "/search", query: { q: this.keyword } });
+    },
+  },
   watch: {
     $route: {
       immediate: true,
