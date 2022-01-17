@@ -62,3 +62,22 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.form-field {
+  width: 100%;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.row div {
+  width: 25%;
+}
+
+.row img {
+  width: 100px;
+}
+</style>
