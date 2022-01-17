@@ -71,12 +71,11 @@ export default {
         return;
       }
       if (this.edit) {
-        await axios.put(`${APIURL}/photos/${this.id}`,
-          this.form);
+        await axios.put(`${APIURL}/photos/${this.id}`, this.form);
       } else {
         await axios.post(`${APIURL}/photos`, this.form);
       }
-      this.$router.push('/');
+      this.$router.push("/");
     },
     onChange(ev) {
       const reader = new FileReader();
@@ -95,3 +94,18 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.form {
+  margin: 0 auto;
+  width: 70vw;
+}
+
+.form-field {
+  width: 100%;
+}
+
+#photo-preview {
+  width: 200px;
+}
+</style>
