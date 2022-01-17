@@ -26,3 +26,27 @@
     </div>
   </div>
 </template>
+
+<script>
+import axios from "axios";
+import { APIURL } from "../constant";
+
+export default {
+  name: "SearchPage",
+  data() {
+    return {
+      keyword: "",
+      photos: [],
+    };
+  },
+  watch: {
+    $route: {
+      immediate: true,
+      handler() {
+        this.keyword = this.$route.query.q;
+        this.search();
+      },
+    },
+  },
+};
+</script>
