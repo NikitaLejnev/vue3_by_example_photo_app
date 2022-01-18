@@ -23,7 +23,7 @@
 </template>
 <script>
 import axios from "axios";
-import { APIURL } from "../constant";
+import { APIURL } from "../constants";
 
 export default {
   data() {
