@@ -1,22 +1,24 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
+  <div id="app">
+    <nav-bar v-if="!$route.fullPath.includes('login')"></nav-bar>
+    <router-view></router-view>
+  </div>
 </template>
 
 <script>
+import NavBarVue from "./components/NavBar.vue";
 
 export default {
-  name: 'App',
-  components: {}
-}
+  name: "App",
+  components: {
+    NavBarVue,
+  },
+};
 </script>
 
-<style>
+<style scoped>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  margin: 0 auto;
+  width: 70vw;
 }
 </style>
