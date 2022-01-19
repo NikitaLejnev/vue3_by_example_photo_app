@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <nav-bar v-if="!$route.fullPath.includes('login')"></nav-bar>
+    <nav-bar-vue v-if="!$route.fullPath.includes('login')"></nav-bar-vue>
     <router-view></router-view>
   </div>
 </template>
